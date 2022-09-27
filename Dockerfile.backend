@@ -1,0 +1,24 @@
+FROM rust AS build
+WORKDIR /app
+COPY --chown=rust:rust backend .
+
+RUN cargo build --release
+
+FROM scratch AS backend
+
+ENV PORT 8000
+ENV POSTGRES_URI postgres://postgres:postgres@localhost:5432/zer0bin
+
+ENV CHARLIMIT 50000
+ENV EXPIRATION_DAYS -1
+
+ENV ID_LENGTH 6
+ENV PASTE_POST_RATE_LIMIT 2
+ENV PASTE_BEFORE_RATE_LIMIT 5
+
+ENV LOG_ON_POST false
+ENV LOG_ON_GET false
+
+COPY --from=build /app/target/x86_64-unknown-linux-musl/release/zer0bin /zer0bin
+
+CMD [ "/zer0bin" ]
