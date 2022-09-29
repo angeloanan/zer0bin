@@ -276,6 +276,7 @@ dependencies = [
  "badge-maker",
  "chrono",
  "nanoid",
+ "num-traits",
  "serde",
  "serde_json",
  "sqlx",

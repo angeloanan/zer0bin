@@ -16,11 +16,17 @@ actix-governor = "0.3.0"
 
 badge-maker = "0.2.1"
 
-sqlx = { version = "0.5.11", features = ["runtime-tokio-rustls", "postgres", "chrono"] }
+sqlx = { version = "0.5.11", features = [
+  "runtime-tokio-rustls",
+  "postgres",
+  "chrono",
+] }
 
 chrono = { version = "0.4.19", features = ["serde"] }
 
 nanoid = "0.4.0"
+
+num-traits = "0.2"
 
 [profile.release]
 codegen-units = 1
