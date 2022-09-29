@@ -28,7 +28,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          file: Dockerfile.fronend
+          file: Dockerfile.frontend
           context: .
           push: true
           cache-from: type=gha
