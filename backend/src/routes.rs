@@ -46,7 +46,12 @@ pub async fn get_paste(state: web::Data<AppState>, id: web::Path<String>) -> imp
             }
 
             if state.config.logging.on_get_paste {
-                println!("[GET]  id={} views={} single_view={}", id, p.views + 1, p.single_view);
+                println!(
+                    "[GET]  id={} views={} single_view={}",
+                    id,
+                    p.views + 1,
+                    p.single_view
+                );
             }
 
             HttpResponse::Ok().json(ApiResponse {
@@ -108,7 +113,12 @@ pub async fn get_raw_paste(state: web::Data<AppState>, id: web::Path<String>) ->
             }
 
             if state.config.logging.on_get_paste {
-                println!("[GET] raw id={} views={} single_view={}", id, p.views + 1, p.single_view);
+                println!(
+                    "[GET] raw id={} views={} single_view={}",
+                    id,
+                    p.views + 1,
+                    p.single_view
+                );
             }
 
             HttpResponse::Ok()
@@ -178,7 +188,12 @@ pub async fn new_paste(
     match res {
         Ok(_) => {
             if state.config.logging.on_post_paste {
-                println!("[POST] id={} length={} single_view={}", id, content.len(), single_view);
+                println!(
+                    "[POST] id={} length={} single_view={}",
+                    id,
+                    content.len(),
+                    single_view
+                );
             }
             HttpResponse::Ok().json(ApiResponse {
                 success: true,
