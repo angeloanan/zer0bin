@@ -19,6 +19,6 @@ ENV PASTE_BEFORE_RATE_LIMIT 5
 ENV LOG_ON_POST false
 ENV LOG_ON_GET false
 
-COPY --from=build /app/target/x86_64-unknown-linux-musl/release/zer0bin /zer0bin
+COPY --from=build /app/target/release/zer0bin-bin /zer0bin
 
 CMD [ "/zer0bin" ]

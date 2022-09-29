@@ -1,4 +1,4 @@
-name: Publish Dev Docker Image to GitHub Packages
+name: Publish Backend Dev Docker Image to GitHub Packages
 on:
   push:
     branches:
