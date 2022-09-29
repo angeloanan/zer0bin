@@ -21,7 +21,7 @@ RUN yarn install --frozen-lockfile --production --prefer-offline
 
 # Copy dev-deps and source-code and build project
 FROM dev-deps as builder
-COPY . .
+COPY ./frontend/ .
 RUN yarn build
 RUN find . -name node_modules | xargs rm -rf
 
