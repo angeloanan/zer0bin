@@ -1,5 +1,3 @@
-import "no-darkreader"
-
 import { marked } from "marked"
 import JSConfetti from "js-confetti"
 import Scrollbar from "smooth-scrollbar"
@@ -198,7 +196,7 @@ function viewPaste(content: string, views: string, singleView: boolean) {
 
 	try {
 		wrapper.classList.remove("text-area-proper")
-	} catch (error) {}
+	} catch (error) { }
 
 	Scrollbar.init(document.querySelector(".scrollbar-container"))
 }

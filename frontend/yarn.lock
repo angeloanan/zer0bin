@@ -487,11 +487,6 @@ nanoid@^3.3.4:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
-no-darkreader@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/no-darkreader/-/no-darkreader-1.0.3.tgz#be4d5dc6eff6f42b85c997ccf624834cf0921332"
-  integrity sha512-pB5jzGQYN2Bxqh0iXPgJkTMGG7pmSB1eEG2xnpHxci6n7LovzViUzRXW/aqEnPHaH6orbA3bfniZe3xjG4EgEw==
-
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
