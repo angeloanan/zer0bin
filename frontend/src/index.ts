@@ -57,7 +57,7 @@ function enable(element: HTMLButtonElement) {
 
 async function postPaste(content: string, callback: Function) {
 	const payload = { content, single_view: singleView }
-	await fetch(`${API_URL}/p/n`, {
+	await fetch(`${import.meta.env.API_URL}/p/n`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -81,7 +81,7 @@ async function postPaste(content: string, callback: Function) {
 }
 
 async function getPaste(id: string, callback: Function) {
-	await fetch(`${API_URL}/p/${id}`, {
+	await fetch(`${import.meta.env.API_URL}/p/${id}`, {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
