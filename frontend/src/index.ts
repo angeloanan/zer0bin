@@ -1,5 +1,4 @@
 import { marked } from "marked"
-import JSConfetti from "js-confetti"
 import Scrollbar from "smooth-scrollbar"
 
 import "./icons"
@@ -13,8 +12,6 @@ let rawContent = ""
 let buttonPaneHidden = false
 let isMarkdown = false
 let singleView = false
-
-const jsConfetti = new JSConfetti()
 
 const lineNumbers = <HTMLElement>document.querySelector(".line-numbers")
 const wrapper = <HTMLPreElement>document.querySelector(".wrapper")
@@ -215,31 +212,6 @@ async function savePaste() {
 
 			rawContent = res["data"]["content"]
 			viewPaste(rawContent, "0", res["data"]["single_view"])
-
-			const rand = Math.floor(
-				Math.random() * parseInt(CONFETTI_CHANCE ?? "10") * 6
-			)
-
-			if (rand < 5) {
-				jsConfetti.addConfetti({
-					confettiColors: [
-						"#eb6f92",
-						"#f6c177",
-						"#ebbcba",
-						"#31748f",
-						"#9ccfd8",
-						"#c4a7e7",
-					],
-				})
-			} else if (rand === 5) {
-				jsConfetti.addConfetti({
-					emojis: ["🦀"],
-				})
-			} else if (rand === 6) {
-				jsConfetti.addConfetti({
-					emojis: ["🐈", "🧶", "📦"],
-				})
-			}
 		}
 	})
 }
