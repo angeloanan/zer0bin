@@ -2,9 +2,8 @@ import { marked } from "marked"
 
 import "./icons"
 import hljs from "highlight.js/lib/common"
-// import hljs from "../min/highlight.min"
+import 'highlight.js/styles/github-dark.css'
 
-import "../min/rosepine.min.css"
 import { toggleHiddenIcon } from "./icons"
 
 let rawContent = ""
