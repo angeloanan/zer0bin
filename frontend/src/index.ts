@@ -54,7 +54,7 @@ function enable(element: HTMLButtonElement) {
 	element.disabled = false
 }
 
-async function postPaste(content: string, callback: Function) {
+async function postPaste(content: string, callback: (err: any | null, data?: Record<string, unknown>) => void) {
 	const payload = { content, single_view: singleView }
 	await fetch(`${import.meta.env.API_URL}/p/n`, {
 		method: "POST",
@@ -79,7 +79,7 @@ async function postPaste(content: string, callback: Function) {
 		})
 }
 
-async function getPaste(id: string, callback: Function) {
+async function getPaste(id: string, callback: (err: any | null, data?: Record<string, unknown>) => void) {
 	await fetch(`${import.meta.env.API_URL}/p/${id}`, {
 		method: "GET",
 		headers: {
@@ -154,18 +154,20 @@ function viewPaste(content: string, views: string, singleView: boolean) {
 
 	if (singleView) {
 		show(singleViewButton.firstElementChild as HTMLElement)
-		singleViewButton.lastElementChild.classList.add("fire")
+		singleViewButton.lastElementChild?.classList.add("fire")
 		addMessage("This is a single-view paste!")
 	}
 
 	enable(shareButton)
 	shareButton.addEventListener("click", function () {
 		const url = window.location.toString()
-		if (navigator.canShare) {
-			navigator.share({
-				title: "zer0bin paste",
-				url: url,
-			})
+		const shareData: ShareData = {
+			title: "zer0bin paste",
+			url: url,
+		}
+
+		if (navigator.canShare(shareData)) {
+			navigator.share(shareData)
 		} else {
 			navigator.clipboard.writeText(url)
 			addMessage("Copied URL to clipboard!")
@@ -221,7 +223,8 @@ async function duplicatePaste() {
 
 function toggleMarkdown() {
 	let val = editor.value
-	markdownButton.lastElementChild.classList.toggle("markdown")
+	markdownButton.lastElementChild?.classList.toggle("markdown")
+
 	if (isMarkdown) {
 		isMarkdown = false
 		val = val.substring(val.indexOf("\n") + 1)
@@ -296,7 +299,7 @@ markdownButton.addEventListener("click", function () {
 })
 
 singleViewButton.addEventListener("click", function () {
-	singleViewButton.lastElementChild.classList.toggle("fire")
+	singleViewButton.lastElementChild?.classList.toggle("fire")
 	if (singleView) {
 		singleView = false
 		hide(singleViewButton.firstElementChild as HTMLElement)
