@@ -7,7 +7,7 @@ RUN cargo build --release
 FROM scratch AS backend
 
 ENV PORT 8000
-ENV POSTGRES_URI postgres://postgres:postgres@localhost:5432/zer0bin
+ENV POSTGRES_URI postgres://postgres:zer0bin@localhost:5432/zer0bin
 
 ENV CHARLIMIT 50000
 ENV EXPIRATION_DAYS -1
