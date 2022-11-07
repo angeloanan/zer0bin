@@ -7,12 +7,13 @@ services:
       POSTGRES_PASSWORD: zer0bin
       POSTGRES_DB: postgres
     volumes:
-      - db:/var/lib/postgresql/data
+      - ./db/:/var/lib/postgresql/data
 
   api:
     image: ghcr.io/angeloanan/zer0bin-backend:dev
-    build:
-      dockerfile: Dockerfile.backend
+    # UNLESS YOU WANT TO BUILD FROM SOURCE
+    # build:
+    #   dockerfile: Dockerfile.backend
     ports:
       - "4000:4000"
     depends_on:
@@ -20,8 +21,9 @@ services:
 
   frontend:
     image: ghcr.io/angeloanan/zer0bin-frontend:dev
-    build:
-      dockerfile: Dockerfile.frontend
+    # UNLESS YOU WANT TO BUILD FROM SOURCE
+    # build:
+    #   dockerfile: Dockerfile.frontend
     ports:
       - "80:59046"
     depends_on:
