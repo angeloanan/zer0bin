@@ -1,5 +1,4 @@
 import { marked } from "marked"
-import Scrollbar from "smooth-scrollbar"
 
 import "./icons"
 import hljs from "highlight.js/lib/common"
@@ -105,8 +104,6 @@ async function getPaste(id: string, callback: Function) {
 }
 
 function newPaste() {
-	Scrollbar.destroyAll()
-
 	lineNumbers.innerHTML = "&gt;"
 
 	enable(saveButton)
@@ -194,8 +191,6 @@ function viewPaste(content: string, views: string, singleView: boolean) {
 	try {
 		wrapper.classList.remove("text-area-proper")
 	} catch (error) { }
-
-	Scrollbar.init(document.querySelector(".scrollbar-container"))
 }
 
 async function savePaste() {

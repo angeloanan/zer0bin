@@ -1,12 +1,3 @@
-!= '<!--\n'
-!= '▀▀█ █▀▀ █▀▀█ █▀▀█ █▀▀▄ ▀ █▀▀▄ \n'
-!= '▄▀  █▀▀ █▄▄▀ █▄▀█ █▀▀▄ █ █  █ \n'
-!= '▀▀▀ ▀▀▀ ▀ ▀▀ █▄▄█ ▀▀▀  ▀ ▀  ▀ \n'
-!= 'Thank you for using zer0bin!\n'
-!= 'If you\'re reading this message, why not help with development?\n'
-!= 'https://github.com/zer0bin-dev/zer0bin'
-!= '\n-->\n'
-
 html(lang='en')
 	head
 		meta(charset='UTF-8')
@@ -49,9 +40,8 @@ html(lang='en')
 		.bottom-button-wrapper
 			button#hide-button.btn(aria-label='Hide')
 
-		.scrollbar-container
-			.wrapper
-				.line-numbers.noselect
-				pre#code-view-pre(style='visibility: hidden')
-					code#code-view
-				textarea#text-area(spellcheck='false' autofocus='' name='value' aria-label='Paste input area' disabled='' style='visibility: hidden')
+		.wrapper
+			.line-numbers.noselect
+			pre#code-view-pre(style='visibility: hidden')
+				code#code-view
+			textarea#text-area(spellcheck='false' autofocus='' name='value' aria-label='Paste input area' disabled='' style='visibility: hidden')

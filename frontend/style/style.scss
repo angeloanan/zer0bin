@@ -17,42 +17,52 @@ $font-mono: "Cartograph CF", ui-monospace, SFMono-Regular, Menlo, Monaco,
 @import "./font.scss";
 
 @keyframes rainbow {
+
 	0%,
 	100% {
 		background-position: 0 0;
 	}
+
 	50% {
 		background-position: 100% 0;
 	}
 }
+
 .fadeOut {
 	visibility: hidden;
 	opacity: 0;
 	transition: visibility 0s 3s, opacity 2s linear;
 }
+
 body {
 	height: 100%;
 	background-color: $bg_base;
 	margin: 0;
 }
+
 html {
 	height: 100%;
 }
+
 pre {
 	margin: 0;
 }
+
 @mixin selection {
 	::-moz-selection {
 		@content;
 	}
+
 	::selection {
 		@content;
 	}
 }
+
 @include selection {
 	color: $text;
 	background: $highlight;
 }
+
 .noselect {
 	user-select: none;
 	-webkit-user-select: none;
@@ -60,20 +70,21 @@ pre {
 	-moz-user-select: none;
 	-ms-user-select: none;
 }
+
 .wrapper .scroll-content {
 	display: flex;
 }
-.scrollbar-container {
-	height: 100%;
-}
+
 .wrapper {
 	display: flex;
 	padding: 1rem 0.5rem;
 	font-size: 1rem;
 }
+
 .text-area-proper {
 	height: calc(100% - 2rem);
 }
+
 .line-numbers {
 	color: $subtle;
 	font-family: $font-mono;
@@ -83,6 +94,7 @@ pre {
 	padding-right: 11px;
 	line-height: 1.5em;
 }
+
 #code-view-pre {
 	font-family: $font-mono;
 	padding-top: 0;
@@ -91,27 +103,33 @@ pre {
 	-webkit-text-size-adjust: none;
 	line-height: 1.5em;
 }
+
 #code-view {
 	font-family: $font-mono;
 	padding-top: 0;
 	padding-bottom: 0;
 	line-height: 1.5em;
 }
+
 .viewcounter {
 	font-size: 12px;
 	font-family: $font-mono;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+
 #viewcounter-label {
 	color: $subtle;
 }
+
 #viewcounter-count {
 	color: $rose;
 }
+
 code {
 	color: $text;
 }
+
 textarea {
 	background-color: transparent;
 	resize: none;
@@ -125,6 +143,7 @@ textarea {
 	font-family: $font-mono;
 	font-size: 15px;
 }
+
 .button-wrapper {
 	position: fixed !important;
 	top: 0;
@@ -135,9 +154,11 @@ textarea {
 	z-index: 10;
 	transition: opacity 0.2s, visibility 0.2s;
 }
+
 .buttons {
 	display: flex;
-	> * {
+
+	>* {
 		+ {
 			* {
 				padding: 0.1rem 0.1rem 0.1rem 0.1rem;
@@ -145,17 +166,21 @@ textarea {
 		}
 	}
 }
+
 a {
 	color: $pine;
+
 	&:visited {
 		color: $iris;
 	}
+
 	&:hover {
 		&:not(.logo) {
 			color: $foam;
 		}
 	}
 }
+
 .btn {
 	cursor: pointer;
 	background: 0 0;
@@ -166,18 +191,23 @@ a {
 	transition: background-color 0.2s ease-in-out;
 	display: inline-block;
 	text-decoration: none;
+
 	&:hover {
 		color: $text;
 	}
+
 	&:disabled {
 		color: $muted;
 	}
+
 	transition: all 0.2s ease-in;
 }
+
 .btn[disabled] {
 	color: $muted;
 	cursor: auto;
 }
+
 .bottom-button-wrapper {
 	position: fixed !important;
 	bottom: 0;
@@ -187,11 +217,13 @@ a {
 
 	.btn {
 		color: $muted;
+
 		&:hover {
 			color: $gold;
 		}
 	}
 }
+
 // #share-button {
 // 	position: fixed !important;
 // 	bottom: 0;
@@ -208,6 +240,7 @@ a {
 	font-size: 11px;
 	font-family: $font-mono;
 }
+
 .logo {
 	font-size: 1.8rem;
 	font-weight: 700;
@@ -216,30 +249,32 @@ a {
 	width: 100%;
 	font-family: $font-mono;
 	display: inline-block;
-	background: linear-gradient(
-		to right,
-		$love,
-		$gold,
-		$rose,
-		$pine,
-		$foam,
-		$iris
-	);
+	background: linear-gradient(to right,
+			$love,
+			$gold,
+			$rose,
+			$pine,
+			$foam,
+			$iris);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
 	animation: rainbow 120s linear infinite;
 	background-size: 400% 100%;
+
 	&:hover {
 		animation: rainbow 3s ease infinite !important;
 	}
 }
+
 .markdown {
 	color: $iris;
 }
+
 .fire {
 	color: $love;
 }
+
 // $dur: 1s;
 // $blur: 0.02em;
 // $fireRad: 3em;
@@ -295,6 +330,7 @@ a {
 	margin: 0;
 	list-style: none;
 	width: 400px;
+
 	li {
 		background-color: $bg_trans;
 		font-size: 13px;
@@ -303,6 +339,7 @@ a {
 		padding: 7px;
 	}
 }
+
 @media only screen and (hover: none) and (pointer: coarse) {
 	.button-wrapper {
 		opacity: 0.8;
